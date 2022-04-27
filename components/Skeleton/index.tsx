@@ -40,6 +40,7 @@ export default function Skeleton() {
                         : setColor(themes[tempRand - 1]);
                 } else {
                     setPrevThemeIndex(themeIndex);
+                    setThemeIndex(tempRand);
                     setColor(themes[tempRand]);
                 }
             };
