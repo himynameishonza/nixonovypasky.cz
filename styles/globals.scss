@@ -4,10 +4,10 @@
 @tailwind utilities;
 
 @import '@fortawesome/fontawesome-svg-core/styles.css';
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Space+Mono:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 html,
 body,
 #__next {
     @apply h-full overflow-hidden;
-    font-family: "Press Start 2P"
+    font-family: "Press Start 2P";
 }
