@@ -14,5 +14,5 @@
 html,
 body,
 #__next {
-    @apply h-screen w-screen  overflow-hidden;
+    @apply h-full w-full overflow-hidden bg-black;
 }

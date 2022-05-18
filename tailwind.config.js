@@ -16,7 +16,7 @@ module.exports = {
             },
             keyframes: {
                 glitch: {
-                    '0%': {transform: 'scale(1, 1.5)'},
+                    '0%': {transform: 'scale(1, 1.3)'},
                     '50%': {transform: 'scale(1, 1.2)'},
                     '100%': {transform: 'scale(1.2, 1)'},
                 },
@@ -27,7 +27,7 @@ module.exports = {
                 },
             },
             animation: {
-                'terminal-glitch': 'glitch .1s linear infinite',
+                'terminal-glitch': 'glitch .08s linear infinite',
                 'fade-in': 'fadeIn 1s 1s linear forwards',
             },
         },
