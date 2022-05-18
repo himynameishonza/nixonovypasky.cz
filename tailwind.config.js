@@ -20,8 +20,16 @@ module.exports = {
                     '50%': {transform: 'scale(1, 1.2)'},
                     '100%': {transform: 'scale(1.2, 1)'},
                 },
+                fadeIn: {
+                    '0%': {opacity: '0'},
+
+                    '100%': {opacity: '1'},
+                },
             },
-            animation: {'terminal-glitch': 'glitch .1s linear infinite'},
+            animation: {
+                'terminal-glitch': 'glitch .1s linear infinite',
+                'fade-in': 'fadeIn 1s 1s linear forwards',
+            },
         },
     },
 };

@@ -31,7 +31,8 @@
         "react": "17.0.2",
         "react-dom": "17.0.2",
         "sass": "^1.49.9",
-        "tailwindcss": "^3.0.24"
+        "tailwindcss": "^3.0.24",
+        "use-sound": "^4.0.1"
     },
     "devDependencies": {
         "@types/node": "^17.0.21",
