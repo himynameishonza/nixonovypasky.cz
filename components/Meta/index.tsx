@@ -20,10 +20,10 @@ export default function Meta({title}: {title?: string}) {
                 content="Hledání ztraceného, ztrácení nechtěného. Každá cesta vede chvíli rovně. Každá rovná cesta nakonec zatočí."
             />
             <meta property="og:type" content="website" />
-            <meta property="og:image" content="LINK TO THE IMAGE FILE" />
+            <meta property="og:image" content="/static/og_image.png" />
             <meta property="og:url" content="https://nixonovypasky.cz" />
             <meta property="og:site_name" content="Nixonovy pásky" />
-            <meta name="fb:app_id" content="518936135263185" />
+            <meta name="fb:app_id" content="" />
             <meta name="twitter:title" content="Nixonovy pásky" />
             <meta name="pinterest" content="nopin" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -33,7 +33,7 @@ export default function Meta({title}: {title?: string}) {
                 name="twitter:description"
                 content="Hledání ztraceného, ztrácení nechtěného. Každá cesta vede chvíli rovně. Každá rovná cesta nakonec zatočí."
             />
-            <meta name="twitter:image" content="LINK TO IMAGE" />
+            <meta name="twitter:image" content="/static/og_image.png" />
             <meta name="twitter:site" content="@nixonovypasky" />
             <meta name="twitter:creator" content="@nixonovypasky" />
             <link rel="canonical" href="http://nixonovypasky.cz/" />
