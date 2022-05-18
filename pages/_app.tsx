@@ -1,4 +1,4 @@
-import '../styles/globals.scss';
+import '../styles/globals.css';
 import {IconPack, library} from '@fortawesome/fontawesome-svg-core';
 import {fad} from '@fortawesome/pro-duotone-svg-icons';
 import {far} from '@fortawesome/pro-regular-svg-icons';
@@ -12,7 +12,7 @@ library.add(far as IconPack);
 library.add(fas as IconPack);
 library.add(fal as IconPack);
 
-function MyApp({Component, pageProps}) {    
+function MyApp({Component, pageProps}) {
     return <Component {...pageProps} />;
 }
 
