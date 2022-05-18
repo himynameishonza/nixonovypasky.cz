@@ -7,7 +7,7 @@ module.exports = {
     ],
     theme: {
         fontFamily: {
-            phosphate: ['Phosphate', 'sans-serif'],
+            phosphateDisplay: ['PhosphateDisplay', 'sans-serif'],
             caption: ['PT Sans Caption', 'sans-serif'],
         },
         extend: {

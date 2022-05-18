@@ -40,6 +40,7 @@ export default function Meta({title}: {title?: string}) {
             <meta name="robots" content="index, follow" />
             <link rel="preload" as="font" href="/static/fonts/Phosphate.woff"></link>
             <link rel="preload" as="font" href="/static/fonts/Phosphate.woff2"></link>
+            <link rel="preload" as="font" href="/static/fonts/Phosphate.ttf"></link>
         </Head>
     );
 }

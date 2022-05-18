@@ -1,7 +1,8 @@
 @font-face {
-  font-family: "Phosphate";
+  font-family: "PhosphateDisplay";
   src: url("/static/fonts/Phosphate.woff2") format("woff2"),
-       url("/static/fonts/Phosphate.woff") format("woff");
+       url("/static/fonts/Phosphate.woff") format("woff"),
+       url('/static/fonts/Phosphate.ttf') format('truetype');
 }
 
 @tailwind base;
@@ -13,5 +14,5 @@
 html,
 body,
 #__next {
-    @apply h-full w-full  overflow-hidden;
+    @apply h-screen w-screen  overflow-hidden;
 }
