@@ -26,7 +26,7 @@ export default function Meta({title}: {title?: string}) {
             <meta name="fb:app_id" content="105095625361423" />
             <meta name="pinterest" content="nopin" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+            <meta name="apple-mobile-web-app-status-bar-style" content="#000000" />
             <meta name="format-detection" content="telephone=no" />
             <meta
                 name="twitter:description"
