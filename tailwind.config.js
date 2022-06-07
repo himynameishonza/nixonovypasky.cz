@@ -9,6 +9,7 @@ module.exports = {
         fontFamily: {
             phosphateDisplay: ['PhosphateDisplay', 'sans-serif'],
             caption: ['PT Sans Caption', 'sans-serif'],
+            terminal: ['IBM Plex Mono', 'monospace'],
         },
         extend: {
             backgroundImage: {

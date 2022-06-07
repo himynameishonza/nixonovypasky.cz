@@ -9,12 +9,15 @@ export default function Meta({title}: {title?: string}) {
             />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta charSet="utf-8" />
-            <title>{title ? title : 'NIXONOVY PÁSKY'}</title>
+            <title>{title ? title + ' - NIXONOVY PÁSKY' : 'NIXONOVY PÁSKY'}</title>
             <meta
                 name="description"
                 content="Hledání ztraceného, ztrácení nechtěného. Každá cesta vede chvíli rovně. Každá rovná cesta nakonec zatočí."
             />
-            <meta name="og:title" content={title ? title : 'NIXONOVY PÁSKY'} />
+            <meta
+                name="og:title"
+                content={title ? title + ' - NIXONOVY PÁSKY' : 'NIXONOVY PÁSKY'}
+            />
             <meta
                 name="og:description"
                 content="Hledání ztraceného, ztrácení nechtěného. Každá cesta vede chvíli rovně. Každá rovná cesta nakonec zatočí."

@@ -30,6 +30,7 @@
         "postcss": "^8.4.12",
         "react": "17.0.2",
         "react-dom": "17.0.2",
+        "react-terminal": "^1.2.1",
         "sass": "^1.49.9",
         "tailwindcss": "^3.0.24",
         "use-sound": "^4.0.1"
