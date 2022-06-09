@@ -9,14 +9,14 @@ export default function Meta({title}: {title?: string}) {
             />
             <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
             <meta charSet="utf-8" />
-            <title>{title ? title + ' - NIXONOVY PÁSKY' : 'NIXONOVY PÁSKY'}</title>
+            <title>{title ? title + ' - Nixonovy pásky' : 'Nixonovy pásky'}</title>
             <meta
                 name="description"
                 content="Hledání ztraceného, ztrácení nechtěného. Každá cesta vede chvíli rovně. Každá rovná cesta nakonec zatočí."
             />
             <meta
                 name="og:title"
-                content={title ? title + ' - NIXONOVY PÁSKY' : 'NIXONOVY PÁSKY'}
+                content={title ? title + ' - Nixonovy pásky' : 'Nixonovy pásky'}
             />
             <meta
                 name="og:description"
@@ -25,7 +25,7 @@ export default function Meta({title}: {title?: string}) {
             <meta property="og:type" content="website" />
             <meta property="og:image" content="/static/og_image.png" />
             <meta property="og:url" content="https://nixonovypasky.cz" />
-            <meta property="og:site_name" content="NIXONOVY PÁSKY" />
+            <meta property="og:site_name" content="Nixonovy pásky" />
             <meta name="fb:app_id" content="105095625361423" />
             <meta name="pinterest" content="nopin" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
