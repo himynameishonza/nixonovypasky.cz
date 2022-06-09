@@ -20,7 +20,7 @@ export const TerminalWelcomeMessage = () => {
 
 export const TerminalWrongDeviceMessage = () => {
     return (
-        <>
+        <div className="h-full w-full absolute top-0 bottom-0 flex flex-col items-center justify-center">
             <span className="text-xs leading-5">
                 Zdá se, že máš příliš moderní zařízení, občane. Radionet Mainframe je podporován
                 pouze sálovými a osobními počítači s klasickým klávesnicovým vstupem.
@@ -40,7 +40,7 @@ export const TerminalWrongDeviceMessage = () => {
             <Link href={'/koncerty'} passHref>
                 [ Koncerty ]
             </Link>
-        </>
+        </div>
     );
 };
 
@@ -65,7 +65,7 @@ export const TerminalPrompt = ({
         >
             {type !== 'AOMAME'
                 ? type + ' ~ ' + (locked ? 'LOCKED' : 'UNLOCKED') + ' ~ ' + currentDirectory
-                : 'INCOMING TRANSMISSION ~ MAOMAME'}
+                : 'INCOMING TRANSMISSION ~ AOMAME'}
         </span>
         {content}
     </div>
