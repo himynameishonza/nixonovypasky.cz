@@ -7,7 +7,7 @@ export default function Homepage() {
             <Meta />
 
             <div className="w-full h-full flex items-center justify-center bg-[#292929] p-5 select-none">
-                <div className="w-full aspect-w-16 aspect-h-9 absolute -translate-y-1/2 top-1/2">
+                <div className="w-full aspect-w-16 aspect-h-9 relative">
                     <Image
                         src="/static/monoskop.jpg"
                         alt=""

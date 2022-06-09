@@ -10,6 +10,7 @@ class MyDocument extends Document {
                     <link
                         href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@700&display=swap"
                         rel="stylesheet"
+                        crossOrigin=""
                     />
                 </Head>
                 <body>
