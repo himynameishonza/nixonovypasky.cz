@@ -1,5 +1,10 @@
 module.exports = {
-    content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    content: [
+        './pages/**/*.{js,ts,jsx,tsx,css,scss}',
+        './components/**/*.{js,ts,jsx,tsx,css,scss}',
+        './styles/**/*.{js,ts,jsx,tsx,css,scss}',
+    ],
+
     plugins: [
         require('@tailwindcss/typography'),
         require('@tailwindcss/forms'),
