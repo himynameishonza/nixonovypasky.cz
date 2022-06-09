@@ -1,5 +1,4 @@
 const path = require('path');
-const compose = require('next-compose');
 
 module.exports = {
     sassOptions: {
@@ -14,4 +13,5 @@ module.exports = {
             'www.zeleznakoule.cz',
         ],
     },
+    crossOrigin: 'anonymous',
 };

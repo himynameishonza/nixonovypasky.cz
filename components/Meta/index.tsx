@@ -41,9 +41,6 @@ export default function Meta({title}: {title?: string}) {
             <meta name="twitter:creator" content="@nixonovypasky" />
             <link rel="canonical" href="http://nixonovypasky.cz/" />
             <meta name="robots" content="index, follow" />
-            <link rel="preload" as="font" href="/static/fonts/Phosphate.woff"></link>
-            <link rel="preload" as="font" href="/static/fonts/Phosphate.woff2"></link>
-            <link rel="preload" as="font" href="/static/fonts/Phosphate.ttf"></link>
             <link
                 rel="apple-touch-icon"
                 sizes="180x180"
