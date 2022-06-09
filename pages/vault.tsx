@@ -1,5 +1,9 @@
-import TerminalConsole from '../components/Terminal';
+import TerminalLoader from '../components/TerminalLoader';
 
 export default function Vault() {
-    return <TerminalConsole />;
+    return (
+        <>
+            <TerminalLoader />
+        </>
+    );
 }

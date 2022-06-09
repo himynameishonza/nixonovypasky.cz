@@ -22,6 +22,7 @@ import {
 import {ReactTerminal, TerminalContextProvider} from 'react-terminal';
 import * as rdd from 'react-device-detect';
 import {inflateSync} from 'zlib';
+import TerminalScreen from '../TerminalScreen';
 
 interface DeviceProps {
     children: (props: typeof rdd) => React.ReactNode;
@@ -405,68 +406,63 @@ export default function Terminal() {
         <>
             <Meta title="Radionet Mainframe" />
 
-            <div className="w-full h-full bg-[#111] font-terminal overflow-hidden">
-                <div className="terminal h-full">
-                    <div className="terminal-glitch" />
-                    <div className="noise"></div>
-
-                    <Device>
-                        {({isMobile}) => {
-                            if (isMobile) {
-                                return (
-                                    <div className="top-0 left-0 right-0 bottom-0 fixed flex items-center justify-center flex-col w-full h-full z-50 bg-black">
-                                        <TerminalWrongDeviceMessage />
-                                    </div>
-                                );
-                            } else {
-                                return (
-                                    <div className="grid h-full m-0">
-                                        <TerminalContextProvider>
-                                            <ReactTerminal
-                                                commands={commands}
-                                                themes={{
-                                                    radiol: {
-                                                        themeBGColor: 'transparent',
-                                                        themeToolbarColor: 'transparent',
-                                                        themeColor: '#0cd787',
-                                                        themePromptColor: 'transparent',
-                                                    },
-                                                }}
-                                                theme="radiol"
-                                                errorMessage={
-                                                    <TerminalPrompt
-                                                        type="SYSTEM"
-                                                        locked={mainframeLocked}
-                                                        currentDirectory={currentDirectory}
-                                                        content={
-                                                            <>
-                                                                Neznámý příkaz, pro zobrazení
-                                                                nápovědy využijte příkaz{' '}
-                                                                <b className="bg-emerald-600 text-emerald-400 px-1">
-                                                                    help
-                                                                </b>
-                                                            </>
-                                                        }
-                                                    />
-                                                }
-                                                prompt={
-                                                    <TerminalPrompt
-                                                        locked={mainframeLocked}
-                                                        currentDirectory={currentDirectory}
-                                                        type={'INPUT'}
-                                                    />
-                                                }
-                                                showControlBar={false}
-                                                welcomeMessage={<TerminalWelcomeMessage />}
-                                            />
-                                        </TerminalContextProvider>
-                                    </div>
-                                );
-                            }
-                        }}
-                    </Device>
-                </div>
-            </div>
+            <TerminalScreen>
+                <Device>
+                    {({isMobile}) => {
+                        if (isMobile) {
+                            return (
+                                <div className="top-0 left-0 right-0 bottom-0 fixed flex items-center justify-center flex-col w-full h-full z-50 bg-black">
+                                    <TerminalWrongDeviceMessage />
+                                </div>
+                            );
+                        } else {
+                            return (
+                                <div className="grid h-full m-0">
+                                    <TerminalContextProvider>
+                                        <ReactTerminal
+                                            commands={commands}
+                                            themes={{
+                                                radiol: {
+                                                    themeBGColor: 'transparent',
+                                                    themeToolbarColor: 'transparent',
+                                                    themeColor: '#0cd787',
+                                                    themePromptColor: 'transparent',
+                                                },
+                                            }}
+                                            theme="radiol"
+                                            errorMessage={
+                                                <TerminalPrompt
+                                                    type="SYSTEM"
+                                                    locked={mainframeLocked}
+                                                    currentDirectory={currentDirectory}
+                                                    content={
+                                                        <>
+                                                            Neznámý příkaz, pro zobrazení nápovědy
+                                                            využijte příkaz{' '}
+                                                            <b className="bg-emerald-600 text-emerald-400 px-1">
+                                                                help
+                                                            </b>
+                                                        </>
+                                                    }
+                                                />
+                                            }
+                                            prompt={
+                                                <TerminalPrompt
+                                                    locked={mainframeLocked}
+                                                    currentDirectory={currentDirectory}
+                                                    type={'INPUT'}
+                                                />
+                                            }
+                                            showControlBar={false}
+                                            welcomeMessage={<TerminalWelcomeMessage />}
+                                        />
+                                    </TerminalContextProvider>
+                                </div>
+                            );
+                        }
+                    }}
+                </Device>
+            </TerminalScreen>
         </>
     );
 }
