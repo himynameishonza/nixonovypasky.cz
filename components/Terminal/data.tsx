@@ -1,10 +1,46 @@
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
+import Link from 'next/link';
+
 export const TerminalWelcomeMessage = () => {
     return (
-        <div className="text-center mb-16">
-            <h1>Radionet Mainframe</h1>
+        <div className="text-center w-full my-16 text-xs">
+            <div className="mb-4">
+                <div>╭━━━┳━━━┳━━━┳━━┳━━━┳━╮╱╭┳━━━┳━━━━╮</div>
+                <div>┃╭━╮┃╭━╮┣╮╭╮┣┫┣┫╭━╮┃┃╰╮┃┃╭━━┫╭╮╭╮┃</div>
+                <div>┃╰━╯┃┃╱┃┃┃┃┃┃┃┃┃┃╱┃┃╭╮╰╯┃╰━━╋╯┃┃╰╯</div>
+                <div>┃╭╮╭┫╰━╯┃┃┃┃┃┃┃┃┃╱┃┃┃╰╮┃┃╭━━╯╱┃┃╱╱</div>
+                <div>┃┃┃╰┫╭━╮┣╯╰╯┣┫┣┫╰━╯┃┃╱┃┃┃╰━━╮╱┃┃╱╱</div>
+                <div>╰╯╰━┻╯╱╰┻━━━┻━━┻━━━┻╯╱╰━┻━━━╯╱╰╯╱╱</div>
+            </div>
             <h3>Copyright &copy; Radiol Technologies, v23.252.1</h3>
         </div>
+    );
+};
+
+export const TerminalWrongDeviceMessage = () => {
+    return (
+        <>
+            <span className="text-xs leading-5">
+                Zdá se, že máš příliš moderní zařízení, občane. Radionet Mainframe je podporován
+                pouze sálovými a osobními počítači s klasickým klávesnicovým vstupem.
+            </span>
+            <div className="p-5 mt-10">
+                <Link href={'https://www.facebook.com/nixonovypasky'} passHref>
+                    <a className="w-7 h-7 inline-flex items-center justify-center mx-2">
+                        <FontAwesomeIcon icon={['fab', 'facebook']} className="w-full h-full" />
+                    </a>
+                </Link>
+                <Link href="https://www.instagram.com/nixonovypasky/" passHref>
+                    <a className="w-7 h-7 inline-flex items-center justify-center mx-2">
+                        <FontAwesomeIcon icon={['fab', 'instagram']} className="w-full h-full" />
+                    </a>
+                </Link>
+            </div>
+            <Link href={'/koncerty'} passHref>
+                [ Koncerty ]
+            </Link>
+        </>
     );
 };
 
@@ -35,14 +71,6 @@ export const TerminalPrompt = ({
     </div>
 );
 
-export const fileStructure = {
-    root: {files: [{name: 'RPREPORT.txt'}], folders: [{name: 'NIXONOVY-PASKY', locked: true}]},
-    archive: {
-        files: [{name: 'README.txt'}],
-        folders: [{name: 'TRASH'}, {name: 'AUDIO'}, {name: 'VIDEO'}],
-    },
-};
-
 export const TxtFileWrapper = ({title, children}) => {
     return (
         <div className="pl-4 border-l-8 border-double border-blue-300 border-opacity-30 max-w-2xl leading-6 mt-5 text-blue-300 ">
@@ -53,9 +81,10 @@ export const TxtFileWrapper = ({title, children}) => {
         </div>
     );
 };
+
 export const ReportTxtContent = () => {
     return (
-        <TxtFileWrapper title="RPREPORT.txt">
+        <TxtFileWrapper title="rpreport.txt">
             Občane/občanko, nacházíš se ve střeženém prostoru Mainframu. Pokud ti nepřísluší odznak
             a identifikační číslo příslušníka RadioPolu, opusť okamžitě tento prostor. Databáze
             RadioPolu obsahuje veškerý obsah, který byl shledán závadným a v rozporu s poklidným
@@ -72,6 +101,33 @@ export const ReportTxtContent = () => {
     );
 };
 
+export const KoncertyTxtContent = () => {
+    return (
+        <TxtFileWrapper title="koncerty.txt">
+            <div className="flex items-center justify-between">
+                <div>23/7/2022 @ KAŠTAN</div>
+                <div>NIXONOVY PÁSKY + JINÝ METRO</div>
+            </div>
+            <div className="flex items-center justify-between">
+                <div>27/9/2022 @ CAFÉ BAR MÍŠENSKÁ</div>
+                <div>NIXONOVY PÁSKY + SMYČCEM</div>
+            </div>
+        </TxtFileWrapper>
+    );
+};
+
+export const TerminalPlayer = ({filename}) => {
+    return (
+        <div className="ml-10 max-full leading-6 mt-5  text-amber-300">
+            <FontAwesomeIcon icon="play" className="mr-2" />
+            Přehrávám soubor {filename}{' '}
+            <span className="opacity-40">
+                [Pro přerušení přehrávání použijte příkaz{' '}
+                <b className="bg-amber-600 text-amber-400 px-1">q</b>]
+            </span>
+        </div>
+    );
+};
 export const RadiolMessageWrapper = ({title, children}) => {
     return (
         <div className="pl-4 border-l-8 border-double border-amber-300 border-opacity-30 w-full leading-6 mt-5 text-amber-300 ">
