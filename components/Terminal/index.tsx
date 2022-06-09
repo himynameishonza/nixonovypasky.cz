@@ -242,11 +242,11 @@ export default function Terminal() {
                         <b className="bg-amber-600 text-amber-400 px-1">rlloan</b>
                         <br />
                         <br />
-                        Aktuální stav účtu RadiolPay: {bankStatement - 5000} kreditů
+                        Aktuální stav účtu RadiolPay: {bankStatement} kreditů
                     </RadiolMessageWrapper>
                 </>
             );
-        } else {
+        } else if (Object.keys(fileStructure).indexOf(directory) > -1) {
             if (mainframeLocked) {
                 setBankStatement(bankStatement - 5000);
                 return (
@@ -259,25 +259,25 @@ export default function Terminal() {
                         />
                         <RadiolMessageWrapper title="RadioPol Report">
                             Zjištěno narušení pravidel občaského soužití a zásad Radionetu. RadioPol
-                            Vám uděluje pokutu ve výši 5 000 kreditů
+                            Vám uděluje pokutu ve výši 5000 kreditů
                             <br />
                             <br />
                             Aktuální stav účtu RadiolPay: {bankStatement - 5000} kreditů
                         </RadiolMessageWrapper>
                     </>
                 );
-            } else if (Object.keys(fileStructure).indexOf(directory) > -1) {
-                return setCurrentDirectory(directory);
             } else {
-                return (
-                    <TerminalPrompt
-                        type="SYSTEM"
-                        locked={mainframeLocked}
-                        currentDirectory={currentDirectory}
-                        content="Požadovaný adresář neexistuje."
-                    />
-                );
+                setCurrentDirectory(directory);
             }
+        } else {
+            return (
+                <TerminalPrompt
+                    type="SYSTEM"
+                    locked={mainframeLocked}
+                    currentDirectory={currentDirectory}
+                    content="Požadovaný adresář neexistuje."
+                />
+            );
         }
     };
 
@@ -298,7 +298,7 @@ export default function Terminal() {
                         <b className="bg-amber-600 text-amber-400 px-1">rlloan</b>
                         <br />
                         <br />
-                        Aktuální stav účtu RadiolPay: {bankStatement - 5000} kreditů
+                        Aktuální stav účtu RadiolPay: {bankStatement} kreditů
                     </RadiolMessageWrapper>
                 </>
             );
