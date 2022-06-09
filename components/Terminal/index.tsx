@@ -163,7 +163,7 @@ export default function Terminal() {
                                 type="SYSTEM"
                                 locked={mainframeLocked}
                                 currentDirectory={currentDirectory}
-                                content="Nesprávné heslo. Pokus o neoprávněné vniknutí do Mainframu."
+                                content="Nesprávné heslo. Pokus o neoprávněné vniknutí do Mainframu. Kontaktování RadioPolu..."
                             />
                         </div>
                         <RadiolMessageWrapper title="RadioPol Report">
@@ -255,7 +255,7 @@ export default function Terminal() {
                             type="SYSTEM"
                             locked={mainframeLocked}
                             currentDirectory={currentDirectory}
-                            content="Pokus o neoprávněné vniknutí do Mainframu!"
+                            content="Pokus o neoprávněné vniknutí do Mainframu. Kontaktování RadioPolu..."
                         />
                         <RadiolMessageWrapper title="RadioPol Report">
                             Zjištěno narušení pravidel občaského soužití a zásad Radionetu. RadioPol
