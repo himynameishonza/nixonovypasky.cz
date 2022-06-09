@@ -29,6 +29,9 @@ html {
     -webkit-overflow-scrolling: none;
 }
 
+body {
+    background-color: black;
+}
 .device-layout-component {
     background: transparent !important;
     position: absolute !important;
