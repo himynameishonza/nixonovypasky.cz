@@ -25,6 +25,8 @@ $color-text: #f57c00;
 html {
     width: 100%;
     height: 100%;
+    overscroll-behavior-y: none;
+    -webkit-overflow-scrolling: none;
 }
 
 .device-layout-component {
