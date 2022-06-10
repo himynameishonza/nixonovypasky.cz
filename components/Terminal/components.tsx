@@ -4,8 +4,8 @@ import Link from 'next/link';
 
 export const TerminalWelcomeMessage = () => {
     return (
-        <div className="text-center w-full my-16 text-xs">
-            <div className="mb-4">
+        <div className="text-center w-full my-16 text-base">
+            <div className="mb-4 select-none">
                 <div>╭━━━┳━━━┳━━━┳━━┳━━━┳━╮╱╭┳━━━┳━━━━╮</div>
                 <div>┃╭━╮┃╭━╮┣╮╭╮┣┫┣┫╭━╮┃┃╰╮┃┃╭━━┫╭╮╭╮┃</div>
                 <div>┃╰━╯┃┃╱┃┃┃┃┃┃┃┃┃┃╱┃┃╭╮╰╯┃╰━━╋╯┃┃╰╯</div>
@@ -13,7 +13,7 @@ export const TerminalWelcomeMessage = () => {
                 <div>┃┃┃╰┫╭━╮┣╯╰╯┣┫┣┫╰━╯┃┃╱┃┃┃╰━━╮╱┃┃╱╱</div>
                 <div>╰╯╰━┻╯╱╰┻━━━┻━━┻━━━┻╯╱╰━┻━━━╯╱╰╯╱╱</div>
             </div>
-            <h3>Copyright &copy; Radiol Technologies, v23.252.1</h3>
+            <h3 className="text-sm select-none">Copyright &copy; Radiol Technologies, v23.252.1</h3>
         </div>
     );
 };
@@ -57,9 +57,9 @@ export const TerminalPrompt = ({
 }) => (
     <div className="my-3 inline-block terminal-text-shadow">
         <span
-            className={classnames('p-1 mr-2 rounded-sm uppercase  inline', {
-                ['bg-amber-900 text-amber-200']: type === 'INPUT',
-                ['bg-emerald-800 text-emerald-300']: type === 'SYSTEM',
+            className={classnames('p-1 mr-2 rounded-sm uppercase inline', {
+                ['bg-amber-900 text-yellow-300']: type === 'INPUT',
+                ['bg-emerald-900 text-emerald-100']: type === 'SYSTEM',
                 ['bg-purple-900 text-purple-200']: type === 'AOMAME',
             })}
         >
@@ -123,7 +123,7 @@ export const TerminalPlayer = ({filename}) => {
             Přehrávám soubor {filename}{' '}
             <span className="opacity-40">
                 [Pro přerušení přehrávání použijte příkaz{' '}
-                <b className="bg-amber-600 text-amber-400 px-1">q</b>]
+                <b className="bg-amber-900 text-amber-300 px-1">q</b>]
             </span>
         </div>
     );
@@ -143,7 +143,7 @@ export const LoanContent = () => {
     return (
         <RadiolMessageWrapper title="RadiolFinances">
             Vypadá to, že chcete zažádat o půjčku. Pro půjčku využijte příkaz{' '}
-            <b className="bg-amber-600 text-amber-400 px-1">rlloan</b> následovaný částkou v
+            <b className="bg-amber-900 text-amber-300 px-1">rlloan</b> následovaný částkou v
             kreditech.
             <br />
             Minimální půjčka činí 5000 kreditů, maximální 20000 kreditů.

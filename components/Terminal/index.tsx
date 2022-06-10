@@ -1,4 +1,3 @@
-import Meta from '../Meta';
 import {useState} from 'react';
 import router from 'next/router';
 import useSound from 'use-sound';
@@ -18,7 +17,7 @@ import {
     TerminalWrongDeviceMessage,
     KoncertyTxtContent,
     TerminalPlayer,
-} from './data';
+} from './components';
 import {ReactTerminal, TerminalContextProvider} from 'react-terminal';
 import {isBrowser, isMobile} from 'react-device-detect';
 import TerminalScreen from '../TerminalScreen';
@@ -134,7 +133,7 @@ export default function Terminal() {
                     content={
                         <>
                             Pro odemčení Mainframu využijte příkaz{' '}
-                            <b className="bg-emerald-600 text-emerald-400 px-1">unlock</b>{' '}
+                            <b className="bg-emerald-900 text-emerald-100 px-1">unlock</b>{' '}
                             následovaný heslem.
                         </>
                     }
@@ -231,7 +230,7 @@ export default function Terminal() {
                         Nemáte dostatek kreditů na vašem RadiolPay účtě. Přístup k adresářové
                         struktuře je dovolen pouze občanům s kladným kreditovým stavem. V případě
                         potřeby zažádejte o úvěr pomocí příkazu{' '}
-                        <b className="bg-amber-600 text-amber-400 px-1">rlloan</b>
+                        <b className="bg-amber-900 text-amber-300 px-1">rlloan</b>
                         <br />
                         <br />
                         Aktuální stav účtu RadiolPay: {bankStatement} kreditů
@@ -287,7 +286,7 @@ export default function Terminal() {
                         Nemáte dostatek kreditů na vašem RadiolPay účtě. Přístup k adresářové
                         struktuře je dovolen pouze občanům s kladným kreditovým stavem. V případě
                         potřeby zažádejte o úvěr pomocí příkazu{' '}
-                        <b className="bg-amber-600 text-amber-400 px-1">rlloan</b>
+                        <b className="bg-amber-900 text-amber-300 px-1">rlloan</b>
                         <br />
                         <br />
                         Aktuální stav účtu RadiolPay: {bankStatement} kreditů
@@ -394,53 +393,47 @@ export default function Terminal() {
     };
 
     return (
-        <>
-            <Meta title="Radionet Mainframe" />
-
-            <TerminalScreen>
-                {isMobile && <TerminalWrongDeviceMessage />}
-                {isBrowser && (
-                    <TerminalContextProvider>
-                        <ReactTerminal
-                            commands={commands}
-                            themes={{
-                                radiol: {
-                                    themeBGColor: 'transparent',
-                                    themeToolbarColor: 'transparent',
-                                    themeColor: '#0cd787',
-                                    themePromptColor: 'transparent',
-                                },
-                            }}
-                            className="hello"
-                            theme="radiol"
-                            errorMessage={
-                                <TerminalPrompt
-                                    type="SYSTEM"
-                                    locked={mainframeLocked}
-                                    currentDirectory={currentDirectory}
-                                    content={
-                                        <>
-                                            Neznámý příkaz, pro zobrazení nápovědy využijte příkaz{' '}
-                                            <b className="bg-emerald-600 text-emerald-400 px-1">
-                                                help
-                                            </b>
-                                        </>
-                                    }
-                                />
-                            }
-                            prompt={
-                                <TerminalPrompt
-                                    locked={mainframeLocked}
-                                    currentDirectory={currentDirectory}
-                                    type={'INPUT'}
-                                />
-                            }
-                            showControlBar={false}
-                            welcomeMessage={<TerminalWelcomeMessage />}
-                        />
-                    </TerminalContextProvider>
-                )}
-            </TerminalScreen>
-        </>
+        <TerminalScreen>
+            {isMobile && <TerminalWrongDeviceMessage />}
+            {isBrowser && (
+                <TerminalContextProvider>
+                    <ReactTerminal
+                        commands={commands}
+                        themes={{
+                            radiol: {
+                                themeBGColor: 'transparent',
+                                themeToolbarColor: 'transparent',
+                                themeColor: '#0cd787',
+                                themePromptColor: 'transparent',
+                            },
+                        }}
+                        className="hello"
+                        theme="radiol"
+                        errorMessage={
+                            <TerminalPrompt
+                                type="SYSTEM"
+                                locked={mainframeLocked}
+                                currentDirectory={currentDirectory}
+                                content={
+                                    <>
+                                        Neznámý příkaz, pro zobrazení nápovědy využijte příkaz{' '}
+                                        <b className="bg-emerald-900 text-emerald-100 px-1">help</b>
+                                    </>
+                                }
+                            />
+                        }
+                        prompt={
+                            <TerminalPrompt
+                                locked={mainframeLocked}
+                                currentDirectory={currentDirectory}
+                                type={'INPUT'}
+                            />
+                        }
+                        showControlBar={false}
+                        welcomeMessage={<TerminalWelcomeMessage />}
+                    />
+                </TerminalContextProvider>
+            )}
+        </TerminalScreen>
     );
 }

@@ -4,7 +4,7 @@ import Terminal from '../components/Terminal';
 export default function Vault() {
     return (
         <>
-            <Meta />
+            <Meta title="R·A·D·I·O·N·E·T" />
             <Terminal />
         </>
     );
