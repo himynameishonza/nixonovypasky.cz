@@ -20,8 +20,8 @@ export const TerminalWelcomeMessage = () => {
 
 export const TerminalWrongDeviceMessage = () => {
     return (
-        <div className="h-full w-full absolute top-0 bottom-0 flex flex-col items-center justify-center">
-            <span className="text-xs leading-5">
+        <div className="absolute top-0 left-0 right-0 bottom-0 p-10 text-center text-amber-500 font-bold flex items-center flex-col justify-center">
+            <span className="text-xs leading-4">
                 Zdá se, že máš příliš moderní zařízení, občane. Radionet Mainframe je podporován
                 pouze sálovými a osobními počítači s klasickým klávesnicovým vstupem.
             </span>
@@ -55,7 +55,7 @@ export const TerminalPrompt = ({
     currentDirectory: string,
     content?: React.ReactNode,
 }) => (
-    <div className="my-3 inline-block">
+    <div className="my-3 inline-block terminal-text-shadow">
         <span
             className={classnames('p-1 mr-2 rounded-sm uppercase  inline', {
                 ['bg-amber-900 text-amber-200']: type === 'INPUT',
@@ -130,7 +130,7 @@ export const TerminalPlayer = ({filename}) => {
 };
 export const RadiolMessageWrapper = ({title, children}) => {
     return (
-        <div className="pl-4 border-l-8 border-double border-amber-300 border-opacity-30 w-full leading-6 mt-5 text-amber-300 ">
+        <div className="pl-4 border-l-8 border-double border-amber-300 border-opacity-30 w-full leading-6 mt-5 text-amber-300">
             <div className="underline decoration-double underline-offset-4 decoration-2 mb-4">
                 {title} &copy; Copyright Radiol Technologies
             </div>
@@ -187,7 +187,7 @@ export const LoanGrantedContent = ({loan, loanBalance, bankStatement}) => {
 
 export const HelpContent = () => {
     return (
-        <div className="max-w-2xl leading-6 mt-5 text-amber-300 border-l-8 border-double border-amber-300 border-opacity-30 pl-4 ">
+        <div className="max-w-2xl leading-6 mt-5 text-amber-400 border-l-8 border-double border-amber-500 border-opacity-30 pl-4">
             <div className="grid grid-cols-2">
                 <span className="font-bold whitespace-nowrap">dir</span>
                 <span className="float-right whitespace-nowrap">
@@ -246,13 +246,13 @@ export const RadiolNewsContent = () => {
     return (
         <RadiolMessageWrapper title="RadiolNews">
             <br />
-            &gt; Nová Ultravize 15k láme rekordy v prodejích
+            &gt; Nová Ultravize 12k láme rekordy v prodejích
             <br />
             &gt; Nepokoje v severním distriktu byly úspěšně potlačeny
             <br />
             &gt; Nábor k RadioPolu bude probíhat celý měsíc
             <br />
-            &gt; Ultravize 15k snižuje kriminalitu ve všech distriktech!
+            &gt; Ultravize 12k snižuje kriminalitu ve všech distriktech!
             <br />
             &gt; Bude oblačno, v nížinách pod 300 m jsou očekávány mírné radiační deště
         </RadiolMessageWrapper>

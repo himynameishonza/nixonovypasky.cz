@@ -32,32 +32,37 @@ html {
 body {
     background-color: black;
 }
-.device-layout-component {
-    background: transparent !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    bottom: 0 !important;
-    right: 0 !important;
-}
-
-.device-layout-component > div > div {
-    position: absolute !important;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    padding: 0;
-}
-
-.device-layout-component > div > div > div > div {
-    padding: 20px;
-    height: 100%;
-    border: none;
-}
 
 @layer base {
     .terminal-gradient {
-       background: radial-gradient(rgba(100,50,0,1), rgba(100,50,0,0.2))
+        background: radial-gradient(rgba(100, 50, 0, 1), rgba(100, 50, 0, 0.2));
     }
-  }
+}
+
+
+.hello {
+    background: red;
+}
+
+.wrapper > div > div > div {
+    height: 100%;
+    overflow: auto;
+    text-shadow: 0px 0px 1px white;
+}
+
+.wrapper > div > div > div::-webkit-scrollbar {
+    width: 7px;
+}
+
+.wrapper > div > div > div::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.wrapper > div > div > div::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+}
+
+.wrapper > div > div > div::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
