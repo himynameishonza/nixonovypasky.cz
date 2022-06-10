@@ -82,6 +82,43 @@ export const TxtFileWrapper = ({title, children}) => {
     );
 };
 
+export const RiderTxtContent = () => {
+    return (
+        <TxtFileWrapper title="rider.txt">
+            Základní:
+            <br />
+            ├── 2x 220-230 (oddělené)
+            <br />
+            ├── 1x monitor (alespoň třída Mackie Thump12A a jí podobné)
+            <br />
+            └── 1x MIX OUT pro IN-EAR (XLR AUX, nebo bezdrát, pokud je k dispozici)
+            <br />
+            <br />
+            To MIX:
+            <br />
+            ├── 3x XLR <br />
+            ╷ &nbsp;&nbsp;│
+            <br />
+            ╷ &nbsp;&nbsp;├── Honza (lead/SM58)
+            <br />
+            ╷ &nbsp;&nbsp;├── Miloš (back/SM58)
+            <br />
+            ╷ &nbsp;&nbsp;└── Kontrabas/Akordeon (AKG P170 +48V⌁)
+            <br />
+            ╷<br />
+            └── 5x INST
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;│
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;├── 2x L/P OUT z LINE6 Pod GO
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;├── 2x L/P OUT ze Zoom h4n
+            <br />
+            &nbsp;&nbsp;&nbsp;&nbsp;└── 1x Akordeon/Kontrabas (popř. 2x bude-li kanál)
+        </TxtFileWrapper>
+    );
+};
+
 export const ReportTxtContent = () => {
     return (
         <TxtFileWrapper title="rpreport.txt">

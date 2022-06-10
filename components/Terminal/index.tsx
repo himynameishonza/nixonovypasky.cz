@@ -14,6 +14,7 @@ import {
     LoanNotAllowedContent,
     RadiolMessageWrapper,
     ReportTxtContent,
+    RiderTxtContent,
     TerminalWrongDeviceMessage,
     KoncertyTxtContent,
     TerminalPlayer,
@@ -334,6 +335,9 @@ export default function Terminal() {
             switch (file) {
                 case 'rpreport.txt':
                     return <ReportTxtContent />;
+                    break;
+                case 'rider.txt':
+                    return <RiderTxtContent />;
                     break;
                 case 'atlantik.mp3':
                     playAudio('atlantik');

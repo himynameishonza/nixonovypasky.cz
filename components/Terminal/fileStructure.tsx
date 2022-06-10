@@ -5,6 +5,6 @@ export const fileStructure = {
     },
 
     'NIXONOVY-PASKY': {
-        files: ['koncerty.txt', 'atlantik.mp3', 'draty.mp3', 'streda.mp3'],
+        files: ['koncerty.txt', 'rider.txt', 'atlantik.mp3', 'draty.mp3', 'streda.mp3'],
     },
 };
