@@ -55,3 +55,9 @@ body {
     height: 100%;
     border: none;
 }
+
+@layer base {
+    .terminal-gradient {
+       background: radial-gradient(rgba(100,50,0,1), rgba(100,50,0,0.2))
+    }
+  }
