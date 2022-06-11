@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import router from 'next/router';
 import useSound from 'use-sound';
 import {fileStructure} from './fileStructure';
@@ -15,15 +15,12 @@ import {
     RadiolMessageWrapper,
     ReportTxtContent,
     RiderTxtContent,
-    TerminalWrongDeviceMessage,
     KoncertyTxtContent,
     TerminalPlayer,
 } from './components';
 import {ReactTerminal, TerminalContextProvider} from 'react-terminal';
 import {isBrowser, isMobile} from 'react-device-detect';
 import TerminalScreen from '../TerminalScreen';
-import Link from 'next/link';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export default function Terminal() {
     const [mainframeLocked, setMainframeLocked] = useState(true);
@@ -35,6 +32,10 @@ export default function Terminal() {
     const [currentFile, setCurrentFile] = useState('none');
 
     const [play, {stop}] = useSound(currentFile);
+
+    useEffect(() => {
+        isMobile && router.push('/wrong-device');
+    });
 
     const playAudio = filename => {
         setPlayerActive(true);
@@ -380,7 +381,7 @@ export default function Terminal() {
 
     // Define commands here
     const commands = {
-        killall: () => router.push('/'),
+        killall: () => router.push('/wrong-device'),
         unlock: password => passwordCheck(password),
         cd: directory => openDirectory(directory),
         open: file => openFile(file),
@@ -399,80 +400,50 @@ export default function Terminal() {
     };
 
     return (
-        <TerminalScreen>
-            {/* {isMobile && <TerminalWrongDeviceMessage />} */}
-            {isMobile && (
-                <div className="z-50 text-center text-white flex flex-col items-center justify-center h-full">
-                    logo radiolu
-                    <div className="text-amber-400 text-base p-10 leading-5">
-                        Máš nějak podezřele moderní zařízení, občane. Radionet Mainframe je
-                        podporován pouze sálovými a osobními počítači s klasickým klávesnicovým
-                        vstupem.
-                    </div>
-                    <div className="text-amber-400 flex flex-col">
-                        <div className="mb-4">
-                            <Link href={'https://www.facebook.com/nixonovypasky'} passHref>
-                                <a className="w-7 h-7 inline-flex items-center justify-center mx-2">
-                                    <FontAwesomeIcon
-                                        icon={['fab', 'facebook']}
-                                        className="w-full h-full"
-                                    />
-                                </a>
-                            </Link>
-                            <Link href="https://www.instagram.com/nixonovypasky/" passHref>
-                                <a className="w-7 h-7 inline-flex items-center justify-center mx-2">
-                                    <FontAwesomeIcon
-                                        icon={['fab', 'instagram']}
-                                        className="w-full h-full"
-                                    />
-                                </a>
-                            </Link>
-                        </div>
-                        <Link href={'/koncerty'} passHref>
-                            [ Koncerty ]
-                        </Link>
-                    </div>
-                </div>
-            )}
+        <>
             {isBrowser && (
-                <TerminalContextProvider>
-                    <ReactTerminal
-                        commands={commands}
-                        themes={{
-                            radiol: {
-                                themeBGColor: 'transparent',
-                                themeToolbarColor: 'transparent',
-                                themeColor: '#0cd787',
-                                themePromptColor: 'transparent',
-                            },
-                        }}
-                        className="hello"
-                        theme="radiol"
-                        errorMessage={
-                            <TerminalPrompt
-                                type="SYSTEM"
-                                locked={mainframeLocked}
-                                currentDirectory={currentDirectory}
-                                content={
-                                    <>
-                                        Neznámý příkaz, pro zobrazení nápovědy využijte příkaz{' '}
-                                        <b className="bg-emerald-900 text-emerald-100 px-1">help</b>
-                                    </>
-                                }
-                            />
-                        }
-                        prompt={
-                            <TerminalPrompt
-                                locked={mainframeLocked}
-                                currentDirectory={currentDirectory}
-                                type={'INPUT'}
-                            />
-                        }
-                        showControlBar={false}
-                        welcomeMessage={<TerminalWelcomeMessage />}
-                    />
-                </TerminalContextProvider>
+                <TerminalScreen>
+                    <TerminalContextProvider>
+                        <ReactTerminal
+                            commands={commands}
+                            themes={{
+                                radiol: {
+                                    themeBGColor: 'transparent',
+                                    themeToolbarColor: 'transparent',
+                                    themeColor: '#0cd787',
+                                    themePromptColor: 'transparent',
+                                },
+                            }}
+                            className="hello"
+                            theme="radiol"
+                            errorMessage={
+                                <TerminalPrompt
+                                    type="SYSTEM"
+                                    locked={mainframeLocked}
+                                    currentDirectory={currentDirectory}
+                                    content={
+                                        <>
+                                            Neznámý příkaz, pro zobrazení nápovědy využijte příkaz{' '}
+                                            <b className="bg-emerald-900 text-emerald-100 px-1">
+                                                help
+                                            </b>
+                                        </>
+                                    }
+                                />
+                            }
+                            prompt={
+                                <TerminalPrompt
+                                    locked={mainframeLocked}
+                                    currentDirectory={currentDirectory}
+                                    type={'INPUT'}
+                                />
+                            }
+                            showControlBar={false}
+                            welcomeMessage={<TerminalWelcomeMessage />}
+                        />
+                    </TerminalContextProvider>
+                </TerminalScreen>
             )}
-        </TerminalScreen>
+        </>
     );
 }
