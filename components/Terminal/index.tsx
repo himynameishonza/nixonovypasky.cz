@@ -22,6 +22,8 @@ import {
 import {ReactTerminal, TerminalContextProvider} from 'react-terminal';
 import {isBrowser, isMobile} from 'react-device-detect';
 import TerminalScreen from '../TerminalScreen';
+import Link from 'next/link';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 
 export default function Terminal() {
     const [mainframeLocked, setMainframeLocked] = useState(true);
@@ -398,7 +400,40 @@ export default function Terminal() {
 
     return (
         <TerminalScreen>
-            {isMobile && <TerminalWrongDeviceMessage />}
+            {/* {isMobile && <TerminalWrongDeviceMessage />} */}
+            {isMobile && (
+                <div className="z-50 text-center text-white flex flex-col items-center justify-center h-full">
+                    logo radiolu
+                    <div className="text-amber-400 text-base p-10 leading-5">
+                        Máš nějak podezřele moderní zařízení, občane. Radionet Mainframe je
+                        podporován pouze sálovými a osobními počítači s klasickým klávesnicovým
+                        vstupem.
+                    </div>
+                    <div className="text-amber-400 flex flex-col">
+                        <div className="mb-4">
+                            <Link href={'https://www.facebook.com/nixonovypasky'} passHref>
+                                <a className="w-7 h-7 inline-flex items-center justify-center mx-2">
+                                    <FontAwesomeIcon
+                                        icon={['fab', 'facebook']}
+                                        className="w-full h-full"
+                                    />
+                                </a>
+                            </Link>
+                            <Link href="https://www.instagram.com/nixonovypasky/" passHref>
+                                <a className="w-7 h-7 inline-flex items-center justify-center mx-2">
+                                    <FontAwesomeIcon
+                                        icon={['fab', 'instagram']}
+                                        className="w-full h-full"
+                                    />
+                                </a>
+                            </Link>
+                        </div>
+                        <Link href={'/koncerty'} passHref>
+                            [ Koncerty ]
+                        </Link>
+                    </div>
+                </div>
+            )}
             {isBrowser && (
                 <TerminalContextProvider>
                     <ReactTerminal
