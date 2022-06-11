@@ -5,11 +5,7 @@ module.exports = {
         './styles/**/*.{js,ts,jsx,tsx,css,scss}',
     ],
 
-    plugins: [
-        require('@tailwindcss/typography'),
-        require('@tailwindcss/forms'),
-        require('@tailwindcss/aspect-ratio'),
-    ],
+    plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
     theme: {
         fontFamily: {
             phosphateDisplay: ['PhosphateDisplay', 'sans-serif'],

@@ -13,5 +13,6 @@ module.exports = {
             'www.zeleznakoule.cz',
         ],
     },
+
     crossOrigin: 'anonymous',
 };

@@ -1,10 +1,12 @@
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
 import Link from 'next/link';
+import {useEffect} from 'react';
+import useSound from 'use-sound';
 
 export const TerminalWelcomeMessage = () => {
     return (
-        <div className="text-center w-full my-16 text-base">
+        <div className="text-center  w-full my-16 text-base text-amber-400">
             <div className="mb-4 select-none">
                 <div>╭━━━┳━━━┳━━━┳━━┳━━━┳━╮╱╭┳━━━┳━━━━╮</div>
                 <div>┃╭━╮┃╭━╮┣╮╭╮┣┫┣┫╭━╮┃┃╰╮┃┃╭━━┫╭╮╭╮┃</div>
@@ -298,32 +300,36 @@ export const RadiolNewsContent = () => {
 
 export const RadiolIDContent = ({creditBalance, loanBalance, hoursLeft}) => {
     return (
-        <RadiolMessageWrapper title="RadioPol Report">
-            <h1 className="inline text-amber-700">Výpis z karty občana XA2093902</h1>
-            <br />
-            <br />
-            Zařazení: Pracovní četa Distriktu A9
-            <br />
-            Aktuální lokalita: Distrikt A9 [203.22 231.20]
-            <br />
-            Občanský kredit: 76%
-            <br />
-            Občanská loajalita: 42%
-            <br />
-            <br />
-            Poslední záznam EKG: bez výchylek
-            <br />
-            Poslední záznam KT: bez výchylek
-            <br />
-            Hodnota Radiolu+ v krvi: 24% [klesající]
-            <br />
-            <br /> Výpis systému RadiolPay:
-            <br />
-            &gt; Aktuální zůstatek: {creditBalance} kreditů
-            <br />
-            &gt; Aktuální dluh: {loanBalance} kreditů
-            <br />
-            &gt; Zbývající splátky: {hoursLeft} pracovních hodin
-        </RadiolMessageWrapper>
+        <>
+            <RadiolMessageWrapper title="RadioPol Report">
+                <h1 className="inline">
+                    Výpis z karty občana <b>asd</b>
+                </h1>
+                <br />
+                <br />
+                Zařazení: Pracovní četa Distriktu A9
+                <br />
+                Aktuální lokalita: Distrikt A9 [203.22 231.20]
+                <br />
+                Občanský kredit: 76%
+                <br />
+                Občanská loajalita: 42%
+                <br />
+                <br />
+                Poslední záznam EKG: bez výchylek
+                <br />
+                Poslední záznam KT: bez výchylek
+                <br />
+                Hodnota Radiolu+ v krvi: 24% [klesající]
+                <br />
+                <br /> Výpis systému RadiolPay:
+                <br />
+                &gt; Aktuální zůstatek: {creditBalance} kreditů
+                <br />
+                &gt; Aktuální dluh: {loanBalance} kreditů
+                <br />
+                &gt; Zbývající splátky: {hoursLeft} pracovních hodin
+            </RadiolMessageWrapper>
+        </>
     );
 };

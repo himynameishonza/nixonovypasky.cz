@@ -20,7 +20,7 @@ import {
 } from './components';
 import {ReactTerminal, TerminalContextProvider} from 'react-terminal';
 import {isBrowser, isMobile} from 'react-device-detect';
-import TerminalScreen from '../TerminalScreen';
+import TerminalLoader from '../TerminalLoader';
 
 export default function Terminal() {
     const [mainframeLocked, setMainframeLocked] = useState(true);
@@ -31,7 +31,8 @@ export default function Terminal() {
     const [playerActive, setPlayerActive] = useState(false);
     const [currentFile, setCurrentFile] = useState('none');
 
-    const [play, {stop}] = useSound(currentFile);
+    const [playError] = useSound('/static/sounds/error.wav');
+    const [playAlert] = useSound('/static/sounds/alert.m4a');
 
     useEffect(() => {
         isMobile && router.push('/wrong-device');
@@ -40,13 +41,11 @@ export default function Terminal() {
     const playAudio = filename => {
         setPlayerActive(true);
         setCurrentFile('/static/drive/' + filename + '.mp3');
-        play();
     };
 
     const stopAll = () => {
         return playerActive ? (
             (setPlayerActive(false),
-            stop(),
             (
                 <TerminalPrompt
                     type="SYSTEM"
@@ -56,12 +55,15 @@ export default function Terminal() {
                 />
             ))
         ) : (
-            <TerminalPrompt
-                type="SYSTEM"
-                locked={mainframeLocked}
-                currentDirectory={currentDirectory}
-                content={<>Nenalezen žádný aktivní proces.</>}
-            />
+            <>
+                <TerminalPrompt
+                    type="SYSTEM"
+                    locked={mainframeLocked}
+                    currentDirectory={currentDirectory}
+                    content={<>Nenalezen žádný aktivní proces.</>}
+                />
+                {playError()}
+            </>
         );
     };
     const takeLoan = amount => {
@@ -161,6 +163,8 @@ export default function Terminal() {
                                 content="Nesprávné heslo. Pokus o neoprávněné vniknutí do Mainframu. Kontaktování RadioPolu..."
                             />
                         </div>
+
+                        {playAlert()}
                         <RadiolMessageWrapper title="RadioPol Report">
                             Zjištěno narušení pravidel občaského soužití a zásad Radionetu. RadioPol
                             Vám uděluje pokutu ve výši 5000 kreditů
@@ -394,6 +398,7 @@ export default function Terminal() {
                 hoursLeft={loanBalance / 20}
             />
         ),
+
         rlloan: amount => takeLoan(amount),
         rlnews: <RadiolNewsContent />,
         help: <HelpContent />,
@@ -402,8 +407,8 @@ export default function Terminal() {
     return (
         <>
             {isBrowser && (
-                <TerminalScreen>
-                    <TerminalContextProvider>
+                <TerminalLoader>
+                    <TerminalContextProvider value="asd">
                         <ReactTerminal
                             commands={commands}
                             themes={{
@@ -417,19 +422,22 @@ export default function Terminal() {
                             className="hello"
                             theme="radiol"
                             errorMessage={
-                                <TerminalPrompt
-                                    type="SYSTEM"
-                                    locked={mainframeLocked}
-                                    currentDirectory={currentDirectory}
-                                    content={
-                                        <>
-                                            Neznámý příkaz, pro zobrazení nápovědy využijte příkaz{' '}
-                                            <b className="bg-emerald-900 text-emerald-100 px-1">
-                                                help
-                                            </b>
-                                        </>
-                                    }
-                                />
+                                <>
+                                    <TerminalPrompt
+                                        type="SYSTEM"
+                                        locked={mainframeLocked}
+                                        currentDirectory={currentDirectory}
+                                        content={
+                                            <>
+                                                Neznámý příkaz, pro zobrazení nápovědy využijte
+                                                příkaz{' '}
+                                                <b className="bg-emerald-900 text-emerald-100 px-1">
+                                                    help
+                                                </b>
+                                            </>
+                                        }
+                                    />
+                                </>
                             }
                             prompt={
                                 <TerminalPrompt
@@ -442,7 +450,7 @@ export default function Terminal() {
                             welcomeMessage={<TerminalWelcomeMessage />}
                         />
                     </TerminalContextProvider>
-                </TerminalScreen>
+                </TerminalLoader>
             )}
         </>
     );
