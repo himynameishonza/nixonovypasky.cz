@@ -1,6 +1,13 @@
 import classnames from 'classnames';
+import React from 'react';
 
-export default function TerminalScreen({withWrapper, children}) {
+export default function TerminalScreen({
+    withWrapper,
+    children,
+}: {
+    withWrapper?: boolean,
+    children: JSX.Element | JSX.Element[],
+}) {
     return (
         <div className="w-full h-full bg-[#111] font-terminal overflow-hidden relative">
             <div className="pointer-events-none absolute w-full h-full bg-opacity-10 z-50 bg-amber-500 mix-blend-overlay" />
