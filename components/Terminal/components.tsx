@@ -55,7 +55,7 @@ export const TerminalPrompt = ({
     currentDirectory: string,
     content?: React.ReactNode,
 }) => (
-    <div className="my-3 inline-block terminal-text-shadow">
+    <div className="my-3 inline-block">
         <span
             className={classnames('p-1 mr-2 rounded-sm uppercase inline', {
                 ['bg-amber-900 text-yellow-300']: type === 'INPUT',
