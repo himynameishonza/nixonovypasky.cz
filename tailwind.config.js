@@ -8,7 +8,6 @@ module.exports = {
     plugins: [require('@tailwindcss/typography'), require('@tailwindcss/aspect-ratio')],
     theme: {
         fontFamily: {
-            phosphateDisplay: ['PhosphateDisplay', 'sans-serif'],
             caption: ['PT Sans Caption', 'sans-serif'],
             terminal: ['IBM Plex Mono', 'monospace'],
         },

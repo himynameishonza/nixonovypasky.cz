@@ -16,18 +16,14 @@ export default function WrongDevice() {
                                 fillRule="nonzero"
                                 transform="matrix(1 0 0 -1 0 737)"
                             />
-                            <text
-                                fontFamily="PhosphateDisplay"
-                                fontSize="190"
-                                letterSpacing="17.0403587"
-                            >
+                            <text fontSize="190" letterSpacing="17.0403587">
                                 <tspan x="365.854201" y="433.937153">
                                     R
                                 </tspan>
                             </text>
                         </g>
                     </svg>
-                    <div className="text-amber-400 text-base p-10 leading-5 400">
+                    <div className="text-amber-400 text-base p-10 leading-5 drop-shadow-[0_0_10px_rgba(251,191,36,0.6)]">
                         Máš nějak podezřele moderní zařízení, občane. Radionet Mainframe je
                         podporován pouze sálovými a osobními počítači s klasickým klávesnicovým
                         vstupem.

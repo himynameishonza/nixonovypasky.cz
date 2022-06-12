@@ -54,7 +54,7 @@ export default function TerminalLoader({children}) {
                 // </div>
 
                 // step 2
-                <div className="text-amber-400 p-10 w-full h-full flex-col flex items-center justify-center">
+                <div className="text-amber-400 drop-shadow-[0_0_15px_rgba(251,191,36,0.2)] p-10 w-full h-full flex-col flex items-center justify-center">
                     <div className="mb-8 select-none text-center">
                         <div>╭━━━┳━━━┳━━━┳━━┳━━━┳━╮╱╭┳━━━┳━━━━╮</div>
                         <div>┃╭━╮┃╭━╮┣╮╭╮┣┫┣┫╭━╮┃┃╰╮┃┃╭━━┫╭╮╭╮┃</div>
@@ -63,7 +63,7 @@ export default function TerminalLoader({children}) {
                         <div>┃┃┃╰┫╭━╮┣╯╰╯┣┫┣┫╰━╯┃┃╱┃┃┃╰━━╮╱┃┃╱╱</div>
                         <div>╰╯╰━┻╯╱╰┻━━━┻━━┻━━━┻╯╱╰━┻━━━╯╱╰╯╱╱</div>
                     </div>
-                    <div className="text-base text-center">
+                    <div className="text-base text-center drop-shadow-[0_0_15px_rgba(251,191,36,0.2)]">
                         Uveďte své síťové jméno a stikněte ENTER
                         <br />
                         <input

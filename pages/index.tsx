@@ -16,8 +16,8 @@ export default function Homepage() {
                         className="opacity-[0.03]"
                     />
                 </div>
-                <div className="text-center drop-shadow-[4px_4px_0_rgba(0,0,0,1)] tracking-widest absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center font-phosphateDisplay text-lg sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white">
-                    Vyčkejte u přijímače prosím
+                <div className="drop-shadow-[0_0_10px_rgba(251,191,36,0.6)] text-center text-amber-400 absolute top-0 left-0 right-0 bottom-0 flex items-center font-bold justify-center text-sm sm:text-xl tracking-wide">
+                    [ Vyčkejte u přijímače prosím ]
                 </div>
             </TerminalScreen>
         </>

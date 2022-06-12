@@ -1,10 +1,3 @@
-@font-face {
-    font-family: 'PhosphateDisplay';
-    src: url('/static/fonts/Phosphate.woff2') format('woff2'),
-        url('/static/fonts/Phosphate.woff') format('woff'),
-        url('/static/fonts/Phosphate.ttf') format('truetype');
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

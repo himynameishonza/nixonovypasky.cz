@@ -6,8 +6,8 @@ import useSound from 'use-sound';
 
 export const TerminalWelcomeMessage = () => {
     return (
-        <div className="text-center  w-full my-16 text-base text-amber-400">
-            <div className="mb-4 select-none">
+        <div className="text-center  w-full my-16 text-base text-amber-400 ">
+            <div className="mb-4 select-none drop-shadow-[0_0_15px_rgba(251,191,36,0.8)]">
                 <div>╭━━━┳━━━┳━━━┳━━┳━━━┳━╮╱╭┳━━━┳━━━━╮</div>
                 <div>┃╭━╮┃╭━╮┣╮╭╮┣┫┣┫╭━╮┃┃╰╮┃┃╭━━┫╭╮╭╮┃</div>
                 <div>┃╰━╯┃┃╱┃┃┃┃┃┃┃┃┃┃╱┃┃╭╮╰╯┃╰━━╋╯┃┃╰╯</div>
@@ -15,7 +15,9 @@ export const TerminalWelcomeMessage = () => {
                 <div>┃┃┃╰┫╭━╮┣╯╰╯┣┫┣┫╰━╯┃┃╱┃┃┃╰━━╮╱┃┃╱╱</div>
                 <div>╰╯╰━┻╯╱╰┻━━━┻━━┻━━━┻╯╱╰━┻━━━╯╱╰╯╱╱</div>
             </div>
-            <h3 className="text-sm select-none">Copyright &copy; Radiol Technologies, v23.252.1</h3>
+            <h3 className="text-sm select-none drop-shadow-[0_0_15px_rgba(251,191,36,0.8)]">
+                Copyright &copy; Radiol Technologies, v23.252.1
+            </h3>
         </div>
     );
 };
